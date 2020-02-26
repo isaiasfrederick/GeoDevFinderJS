@@ -26,10 +26,6 @@ function App() {
     );
   }, []);
 
-  async function handleDevAdd(e) {
-    e.preventDefault();
-  }
-
   return (
     <div id="app">
       <aside>
@@ -48,8 +44,6 @@ function App() {
           <div className="input-block">
             <label htmlFor="techs">Tecnologias</label>
             <input name="techs" id="techs" required></input>
-            value={techs}
-            onChange={e => setTechs(e.target.value)}
           </div>
           <div class="input-group">
             <div className="input-block">

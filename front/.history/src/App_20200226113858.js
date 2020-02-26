@@ -6,7 +6,6 @@ import "./Main.css";
 
 function App() {
   const [github_username, setGithubUsername] = useState("");
-  const [techs, setTechs] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
@@ -26,10 +25,6 @@ function App() {
     );
   }, []);
 
-  async function handleDevAdd(e) {
-    e.preventDefault();
-  }
-
   return (
     <div id="app">
       <aside>
@@ -37,19 +32,11 @@ function App() {
         <form>
           <div className="input-block">
             <label htmlFor="github_username">Usuário do GitHub</label>
-            <input
-              name="github_username"
-              id="github_username"
-              required
-              value={github_username}
-              onChange={e => setGithubUsername(e.target.value)}
-            ></input>
+            <input name="github_username" id="github_username" required></input>
           </div>
           <div className="input-block">
             <label htmlFor="techs">Tecnologias</label>
             <input name="techs" id="techs" required></input>
-            value={techs}
-            onChange={e => setTechs(e.target.value)}
           </div>
           <div class="input-group">
             <div className="input-block">

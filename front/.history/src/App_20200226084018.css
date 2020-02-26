@@ -12,7 +12,7 @@
   margin-left: 30px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   #app {
     flex-direction: column;
   }
@@ -20,10 +20,6 @@
   #app main {
     margin-left: 0;
     margin-top: 30px;
-  }
-
-  #app aside {
-    width: 100%;
   }
 
 }

@@ -26,10 +26,6 @@ function App() {
     );
   }, []);
 
-  async function handleDevAdd(e) {
-    e.preventDefault();
-  }
-
   return (
     <div id="app">
       <aside>
