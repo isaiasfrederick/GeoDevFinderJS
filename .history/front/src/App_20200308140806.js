@@ -8,8 +8,6 @@ import DevItem from "./components/DevItem";
 import DevForm from "./components/DevForm";
 
 function App() {
-  const [devs, setDevs] = useState([]);
-
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get("/devs");
@@ -19,7 +17,15 @@ function App() {
   }, []);
 
   async function handleAddDev(data) {
-    const response = await api.post("/devs", data);
+    const response = await api.post("/devs", data); {
+      github_username,
+      techs,
+      latitude,
+      longitude
+    });
+
+    setGithubUsername("");
+    setTechs("");
 
     setDevs([...devs, response.data]);
 

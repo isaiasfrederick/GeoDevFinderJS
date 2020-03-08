@@ -5,11 +5,8 @@ import "./SideBar.css";
 import "./Main.css";
 import api from "./services/apis";
 import DevItem from "./components/DevItem";
-import DevForm from "./components/DevForm";
 
 function App() {
-  const [devs, setDevs] = useState([]);
-
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get("/devs");
@@ -18,8 +15,18 @@ function App() {
     loadDevs();
   }, []);
 
-  async function handleAddDev(data) {
-    const response = await api.post("/devs", data);
+  async function handleDevAdd(e) {
+    e.preventDefault();
+
+    const response = await api.post("/devs", {
+      github_username,
+      techs,
+      latitude,
+      longitude
+    });
+
+    setGithubUsername("");
+    setTechs("");
 
     setDevs([...devs, response.data]);
 
@@ -30,7 +37,6 @@ function App() {
     <div id="app">
       <aside>
         <strong> Cadastrar </strong>
-        <DevForm onSubmit={handleAddDev} />
       </aside>
       <main>
         <ul>
